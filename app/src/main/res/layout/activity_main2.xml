@@ -13,18 +13,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtWelcome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal|top"
+            android:gravity="center"
             android:padding="50sp"
-            android:text="Halo,Selamat Datang Admin!" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Welcome Page"
+            android:textSize="34sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.Irfan.mobile_app_kotlin_fannttmi2c
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -24,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnLogin = findViewById(R.id.btnLogin)
-        txtUser = findViewById(R.id.txtUser)
-        txtPass = findViewById(R.id.txtPassword)
+        txtUser = findViewById(R.id.eUser)
+        txtPass = findViewById(R.id.ePassword)
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btnQ)) { v, insets ->
@@ -39,6 +40,19 @@ class MainActivity : AppCompatActivity() {
             val username = txtUser.text.toString()
             val password = txtPass.text.toString()
 
+            val intentPassingData = Intent(this@MainActivity,MainActivity2::class.java)
+
+            //Proses put data
+            intentPassingData.putExtra("username",username)
+            intentPassingData.putExtra("password",password)
+
+            //cek data ada apa tidak, LOGCAT
+            Log.d("cek data username", username)
+            Log.d("cek data password", password)
+
+            //pindah dan membawa datanya
+            startActivity(intentPassingData)
+        /*
             if (username == "admin" && password == "123456") {
 
                 val intent = Intent(this@MainActivity, MainActivity2::class.java)
@@ -47,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Invalid Password or Username", Toast.LENGTH_SHORT).show()
             }
-
+        */
 
 
             // val intentMenu = Intent(this@MainActivity, MainActivity2::class.java)
